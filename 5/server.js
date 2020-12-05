@@ -19,7 +19,7 @@ lineReader.on('close', function () {
     var answer = 0
 
     input.forEach(function (pass) {
-        seatID = getSeatID(pass)
+        var seatID = getSeatID(pass)
         if (seatID > answer) answer = seatID
     })
 
@@ -30,8 +30,6 @@ lineReader.on('close', function () {
 
 function getSeatID(pass) {
 
-    var id
-
     var rows = pass.substring(0, 7)
     var columns = pass.substring(7)
 
@@ -41,11 +39,11 @@ function getSeatID(pass) {
     columns = columns.split('R').join('1')
     columns = columns.split('L').join('0')
 
-    row = binaryStringToInt(rows)
-    column = binaryStringToInt(columns)
+    var row = binaryStringToInt(rows)
+    var column = binaryStringToInt(columns)
 
     // calculate seatID
-    seatID = ((row * 8) + column)
+    var seatID = ((row * 8) + column)
 
     // fill the plane
     if (plane[row] == null) plane[row] = []
@@ -60,7 +58,7 @@ function binaryStringToInt(binaryString) {
     var result = 0
     var counter = 1
 
-    for (i = binaryString.length - 1; i >= 0; i--) {
+    for (var i = binaryString.length - 1; i >= 0; i--) {
         if (binaryString.charAt(i) == '1') result = result + counter
         counter = counter * 2
     }

@@ -32,7 +32,7 @@ function getSeatID(pass) {
 
     var id
 
-    var rows = pass.substring(0,7)
+    var rows = pass.substring(0, 7)
     var columns = pass.substring(7)
 
     rows = rows.split('F').join('0')
@@ -43,13 +43,13 @@ function getSeatID(pass) {
 
     row = binaryStringToInt(rows)
     column = binaryStringToInt(columns)
-    
+
     // calculate seatID
-    seatID = ((row * 8)+column)
+    seatID = ((row * 8) + column)
 
     // fill the plane
-    if (plane[row]==null) plane[row] = []
-    plane[row][column]=seatID
+    if (plane[row] == null) plane[row] = []
+    plane[row][column] = seatID
 
     return seatID
 
@@ -60,9 +60,8 @@ function binaryStringToInt(binaryString) {
     var result = 0
     var counter = 1
 
-    for (i=binaryString.length-1;i>=0;i--)
-    {
-        if (binaryString.charAt(i)=='1') result = result + counter
+    for (i = binaryString.length - 1; i >= 0; i--) {
+        if (binaryString.charAt(i) == '1') result = result + counter
         counter = counter * 2
     }
 

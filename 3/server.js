@@ -24,8 +24,6 @@ lineReader.on('close', function () {
     var answer2 = (calculateTrees(input,1,1)*calculateTrees(input,3,1)*calculateTrees(input,5,1)*calculateTrees(input,7,1)*calculateTrees(input,1,2))
     console.log("answer 2: "+answer2)
 
-
-
 })
 
 function calculateTrees(puzzle,stepsX,stepsY) {

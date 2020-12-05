@@ -26,7 +26,6 @@ lineReader.on('close', function () {
 
     console.log("answer", answer)
 
-
     var answer2 = 0
 
     entries.forEach(function (entry1) {
@@ -38,6 +37,5 @@ lineReader.on('close', function () {
     })
 
     console.log("answer2", answer2)
-
 
 })

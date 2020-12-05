@@ -54,5 +54,4 @@ lineReader.on('close', function () {
 
     console.log("answer2", answer2)
 
-
 })

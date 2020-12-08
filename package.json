@@ -1,15 +1,14 @@
 {
   "name": "advent-2020",
-  "version": "0.0.1",
-  "main": "index.js",
+  "version": "0.0.8",
+  "main": "8/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.15.0",
-    "eslint-plugin-react": "^7.21.5"
+    "eslint": "^7.15.0"
   },
   "dependencies": {},
   "repository": {

@@ -15,19 +15,24 @@ lineReader.on('close', function () {
 
     console.log("code lines in file:", code.length)
 
+    // -- PART ONE --
+
     console.log("running code into loop to find accumulator value..")
     runCode(code,true)
 
+    // -- PART TWO --
+
+    // we will now modify the code single line every time
     for (var n=0;n<code.length;n++) {
 
-        // make a new copy
+        // make a new copy of the code
         var copiedCode = [...code]
 
-        // replace one line
+        // replace one line in the copy
         if (copiedCode[n].substring(0,3)=='nop') copiedCode[n] = "jmp " + copiedCode[n].split(' ')[1]
         else if (copiedCode[n].substring(0,3)=='jmp') copiedCode[n] = "nop " + copiedCode[n].split(' ')[1]
 
-        // run the new version
+        // run the new copy and see if it ran
         var result = runCode(copiedCode)
         if (result > -1) console.log("answer2",result)
     }
